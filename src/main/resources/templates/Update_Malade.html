@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Gestion des Rendez-vous malades</title>
+    <link rel="stylesheet"  href="/webjars/bootstrap/5.2.0/css/bootstrap.min.css"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+    <h1>Formulaire De Modification</h1>
+    <hr>
+    <h2>UPDATE MALADE</h2>
+    <form action="#" th:action="@{/savePatient}" th:object="${malades}" method="post">
+        <input  type="hidden" th:field="*{id}"/>
+        <input  type="text" th:field="*{nom}"  class="form-control mb-4 col-4"/>
+        <input  type="date" th:field="*{datenaissance}"  class="form-control mb-4 col-4"/>
+        <input  type="checkbox" th:field="*{malade}"/>
+        <input  type="text" th:field="*{score}" placeholder="Veuillez saisir le Score" class="form-control mb-4 col-4"/>
+        <button type="submit" class="btn btn-info col-2">Udapte Malade </button>
+    </form>
+    <hr>
+        <a th:href="@{/}">Retour formulaire liste</a>
+</div>
+</body>
+</html>
